@@ -74,37 +74,7 @@ def suicide_keyword_analysis(data):
                     df_neg["frequency"].iloc[i] = neg_str2.count(neg_str3[i])
         return df_pos, df_neg
     
-    
-    # ### word cloud function
-    # def word_cloud(data):
-    #     comment_words = ''
-    #     # stopwords = set(STOPWORDS)
-    #     stopwords = ""
-    #
-    #     for val in data:
-    #         val = str(val)
-    #         tokens = val.split()
-    #         for i in range(len(tokens)):
-    #             tokens[i] = tokens[i].lower()
-    #         comment_words += " ".join(tokens)+" "
-    #
-    #     wordcloud = WordCloud(width = 3000, height = 2000,
-    #                 background_color ='white',
-    #                 stopwords = stopwords,
-    #                 min_font_size = 10,
-    #                 random_state= 6,
-    #                 collocations = False,
-    #                 prefer_horizontal = 1,
-    #                 max_words = 200
-    #                 ).generate(comment_words)
-    #
-    #     plt.figure(figsize = (8, 8), facecolor = None)
-    #     plt.imshow(wordcloud)
-    #     plt.axis("off")
-    #     plt.tight_layout(pad = 0)
-    #     plt.show()
-    #     st.pyplot(plt)
-    
+   
     ### Seperation of Data
     # sentiment polarity class
     neg_class = data[data['sentiment polarity class'] == 'negative']
@@ -267,7 +237,6 @@ def suicide_keyword_analysis(data):
 
     
     return data
-
 
 ### word cloud function
 def word_cloud(data):
