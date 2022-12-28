@@ -77,29 +77,3 @@ with st.container():
         st.subheader("Suicide Prediction")
         if st.button('proceed'):
             switch_page("suicide_prediction")
-
-
-
-
-
-
-
-
-# img = Image.open("C:/Users/AlanKoo99/Desktop/FYP coding/webpage/images/0.jpg")
-# with st.container():
-#     st.write("---")
-#     st.header("My Project")
-#     st.write("##")
-#     image_column, text_column = st.columns((1,2))
-#     with image_column:
-#         st.image(img)
-#     with text_column:
-#         st.subheader("subheader here")
-#         st.write(
-#             """
-#             information here .......
-#             """
-#         )
-#         st.markdown("[watch video...](https://www.youtube.com/watch?v=tO2auFdoFDU)")
-# st.write("[learn more emoji >](https://www.webfx.com/tools/emoji-cheat-sheet/)")
-
