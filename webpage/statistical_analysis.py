@@ -111,139 +111,17 @@ def statistic_analysis (data):
     
     
     
-    
-    
-    
-    ### print all results
-    # print("Data Size:",len(data),'\n')
-    # print(class_value,'\n')
-    # print(sp_class_value,'\n')
-    # print(sp_level_value,'\n')
-    # print(emotion_value,'\n')
-    # print(overall,'\n')
-    # pd.set_option('display.max_rows', None)
-    # print(overall_2,'\n')
-    
-    ### graph (suicide vs sp class)
-    # bar_pie_plot(sp_class_value)
-    ### graph (suicide vs sp level)
-    # bar_pie_plot(sp_level_value)
-    ### graph (suicide vs emotion)
-    # bar_pie_plot(emotion_value)
-    
     ### graph (suicide vs overall)
     new_overall = overall.sort_values(by="Percentage", ascending=False)
     new_overall = new_overall[0:10]
     new_overall.reset_index(drop=True, inplace=True)
-    # bar_pie_plot2(new_overall)
     
     ### graph (suicide vs overall2)
     new_overall1 = overall_2.sort_values(by="Percentage", ascending=False)
     new_overall1 = new_overall1[0:10]
     new_overall1.reset_index(drop=True, inplace=True)
-    # bar_pie_plot2(new_overall1)
 
     return sp_class_value, sp_level_value, emotion_value, new_overall, new_overall1
-
-
-
-
-
-#######################################################################################################################
-#######################################################################################################################
-#######################################################################################################################
-## bar_pie_plot function 1
-def bar_pie_plot(data):
-    if data.columns[0] == "Sentiment Polarity Class":
-        colour = ['red', 'limegreen','grey']
-        xlabel = 'sentiment polarity class'
-        ylabel = 'number of suicide text'
-        title = "Number of Suicide Text with Different Class of Sentiment Polarity"
-        xtickSize = 10
-        ytickSize = 10
-        propSize = 10
-        legendLoc = "upper right"
-        xtickSize2 = 10
-        ytickSize2 = 10
-    elif data.columns[0] == "Sentiment Polarity level":
-        colour = ["red","darkorange","gold","limegreen","mediumblue","darkviolet","deeppink","sienna","teal","cyan","pink"]
-        xlabel = 'sentiment polarity level'
-        ylabel = 'number of suicide text'
-        title = "Number of Suicide Text with Different Level of Sentiment Polarity"
-        xtickSize = 7
-        ytickSize = 10
-        propSize = 8
-        legendLoc = "upper left"
-        xtickSize2 = 10
-        ytickSize2 = 10
-    elif data.columns[0] == "Emotion Class":
-        colour = ["red","darkorange","gold","limegreen","mediumblue","darkviolet","deeppink","sienna","teal","cyan"]
-        xlabel = 'emotion class'
-        ylabel = 'number of suicide text'
-        title = "Number of Suicide Text with Different Emotion Class"
-        xtickSize = 10
-        ytickSize = 10
-        propSize = 10
-        legendLoc = "upper right"
-        xtickSize2 = 10
-        ytickSize2 = 10
-
-    #add label function
-    def addlabels(x,y):
-        for i in range(len(x)):
-            plt.text(i, y[i]//2, y[i], ha = 'center', fontsize=14)
-
-    ### bar plot
-    # x-coordinates of left sides of bars 
-    left = []
-    for n in range(len(data)):
-        left.append(n)
-    # heights of bars
-    height = []
-    for n in range(len(data)):
-        height.append(data.loc[n,'Frequency'])
-    # labels for bars
-    tick_label = []
-    label_col = data.columns[0]
-    for n in range(len(data)):
-        tick_label.append(data.loc[n, label_col])
-    # plotting a bar chart
-    plt.rc('xtick', labelsize= xtickSize)    
-    plt.rc('ytick', labelsize= ytickSize)
-    plt.bar(left, height, tick_label = tick_label,
-            width = 0.6, color = colour)
-    #add label
-    addlabels(tick_label, height)
-    # naming the x-axis
-    plt.xlabel(xlabel, fontsize=13, weight='bold')
-    # naming the y-axis
-    plt.ylabel(ylabel, fontsize=13, weight='bold')
-    # plot title
-    plt.title(title, fontsize=20, weight='bold', )
-    #display value
-    for index, value in enumerate(height):
-        plt.text(value, index,
-                 str(value))
-    # function to show the plot
-    st.pyplot(fig = plt, clear_figure=True)
-
-    ### pie plot
-    # plotting a pie chart
-    plt.rc('xtick', labelsize= xtickSize2)    
-    plt.rc('ytick', labelsize= ytickSize2)
-    plt.pie(height, labels = tick_label, colors= colour, autopct = '%1.1f%%')
-    # plot title
-    plt.title(title, fontsize=20, weight='bold', )
-    # plot legend
-    plt.legend(loc=legendLoc, prop={'size': propSize})
-    # function to show the plot
-    st.pyplot(fig = plt, clear_figure=True)
-
-
-
-
-
-
 
 
 
@@ -290,10 +168,7 @@ def bar_pie_plot_1_1(data):
     # naming the y-axis
     plt.ylabel(ylabel, fontsize=10, weight='bold')
     # function to show the plot
-    
     st.pyplot(fig = plt, clear_figure=True)
-
-
 
 #######################################################################################################################
 def bar_pie_plot_1_2(data):
@@ -334,7 +209,6 @@ def bar_pie_plot_1_2(data):
     plt.legend(loc=legendLoc, prop={'size': propSize})
     # function to show the plot
     st.pyplot(fig = plt, clear_figure=True)
-
 
 
 #######################################################################################################################
@@ -381,8 +255,6 @@ def bar_pie_plot_2_1(data):
     # function to show the plot
     st.pyplot(fig = plt, clear_figure=True)
 
-
-
 #######################################################################################################################
 def bar_pie_plot_2_2(data):
     title = "Number of Suicide Text with Different Level of Sentiment Polarity"
@@ -423,7 +295,6 @@ def bar_pie_plot_2_2(data):
     plt.legend(loc=legendLoc, prop={'size': propSize})
     # function to show the plot
     st.pyplot(fig = plt, clear_figure=True)
-
 
 
 #######################################################################################################################
@@ -470,8 +341,6 @@ def bar_pie_plot_3_1(data):
     # function to show the plot
     st.pyplot(fig = plt, clear_figure=True)
 
-
-
 #######################################################################################################################
 def bar_pie_plot_3_2(data):
     colour = ["red","darkorange","gold","limegreen","mediumblue","darkviolet","deeppink","sienna","teal","cyan"]
@@ -512,9 +381,6 @@ def bar_pie_plot_3_2(data):
     plt.legend(loc=legendLoc, prop={'size': propSize})
     # function to show the plot
     st.pyplot(fig = plt, clear_figure=True)
-
-
-
 
 
 #######################################################################################################################
