@@ -1,0 +1,9 @@
+cd desktop
+
+cd FYP coding
+
+cd webpage
+
+streamlit run app.py
+
+
