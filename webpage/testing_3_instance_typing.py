@@ -73,25 +73,3 @@ def model_20_testing(data, text):
     
     return str(round(x['polarity_pos'].iloc[0],3)), str(round(x['polarity_neg'].iloc[0],3)), "compound: " + str(round(x['polarity_compound'].iloc[0],3)), str(emotion.top_emotions[0][0]), clf.predict(vec)
     
-
-# data = data_loading.load_data(r'C:\Users\AlanKoo99\Desktop\FYP coding\data\experiment_test_2_emotion.csv')
-# text = 'I have no idea what i can do, maybe i should not live in this world. i need helpjust help me im crying so hard.'
-
-# text = """I’m scared.   Everything just seems to be getting worse and worse. I’m young and I think I’m transgender but I’m not even sure about that. I can’t tell if I’m just lying to myself or if I’m actually trans, I feel so overwhelmed with thoughts and emotions and I can’t just take it anymore.
-# I just wish I could at least know for sure if I was trans, and even then I have to worry about if my (religious) family will be accepting and if I can actually do anything to alleviate my pain a bit.
-# I cut myself for the first time yesterday, I barely even drew blood so I can’t even fucking hurt myself correctly. I don’t think I’ll ever be able to do anything correctly, I want to pursue music but I know there’s no money to be found in that field unless I become famous but that’s not happening. 
-# Currently I’m not seriously debating suicide but the thoughts keep coming back and they just keep getting worse. I’m not sure if I can really take this much longer, I just wish I was born a girl. I want to cry."""
-
-# text = "I cannot stand it anymore! It is very pressure and stress until i not sleeping well every single night. I think i should end my life and release from this cruel world......"
-#
-# # text = input("Type something for suicide prediction: ")
-# # print("Input Successful" + '\n')
-# # model_20_testing(data, text)
-#
-# while (text != "exit"):  
-#     text = input("\nType something for suicide prediction: ")
-#     print("Input Successful" + '\n')
-#     if(text == "exit"):  
-#         break
-#     model_20_testing(data, text) 
-      
