@@ -48,13 +48,3 @@ def model_20_testing(data, data2):
             data2['class'].iloc[n] = 'non-suicide'
         
     return data2
-
-#### print result
-# for n in range(len(data3)):
-#     sys.stdout.buffer.write(str(n).encode("utf-8") + b'. ' + data3.ori_text.iloc[n].encode("utf-8") + b'\n')
-#     print("pos: " + str(data3['polarity_pos'].iloc[n]) + " " +
-#           "neg: " + str(data3['polarity_neg'].iloc[n] ) + " " +
-#           "compound: " + str(data3['polarity_compound'].iloc[n]) + " " +
-#           "emotion: " + str(data3['emotion'].iloc[n])
-#           )
-#     print("prediction class : " + data3['class'].iloc[n] + '\n')
